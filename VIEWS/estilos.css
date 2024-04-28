@@ -5,4 +5,7 @@ iframe{
 tr:hover{
     background-color: aqua !important;
 }
+.logo{
+    max-height: 50px;
+}
 

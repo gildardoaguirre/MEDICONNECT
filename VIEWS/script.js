@@ -58,3 +58,15 @@ function irConsultarCita(params) {
     workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/consultarCitas.html")
     console.log(workArea.getAttributeNode("src"))
 }
+function eliminarTd(params) {
+    if (window.confirm("desea cancelar la cita?")) {
+        alert("Cita cancelada exitosamente !!!")
+        
+    }
+}
+function irConsultarOrden(params) {
+    var workArea=document.getElementById("wareaCitas")
+    console.log(workArea)
+    workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/consultarServicios.html")
+    console.log(workArea.getAttributeNode("src"))
+}

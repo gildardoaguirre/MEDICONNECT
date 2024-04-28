@@ -7,7 +7,9 @@ function validarLogin(params) {
         alert("Error en el Usuario")
     }else{
         if (validarPass(txtPassWord.value)=="ok") {
-            enviarsolicitud(solicitarAcceso(txtUsuario,txtPassWord))     
+            solicitarAcceso(txtUsuario.value,txtPassWord)
+            
+
         }else{
             alert("Error en el Password") 
         }
@@ -39,11 +41,21 @@ function irLoguin(params) {
     workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/login.html")
     console.log(workArea.getAttributeNode("src"))
 }
+function irMenu(perfil) {
+
+    if (perfil=="AAAAAAAA") {
+        irMenuPaciente()
+    }
+    if (perfil=="BBBBBBBB") {
+        irMenuProfesional()
+    }
+    
+}
 function irMenuPaciente(params) {
-    var workArea=document.getElementById("warea")
-    console.log(workArea)
-    workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/gestionCitas.html")
-    console.log(workArea.getAttributeNode("src"))
+    location.href ="http://127.0.0.1:5500/VIEWS/gestionCitas.html"
+}
+function irMenuProfesional(params) {
+    location.href ="http://127.0.0.1:5500/VIEWS/gestionOrdenes.html"
 }
 function irSolicitarCita(params) {
     var workArea=document.getElementById("wareaCitas")
@@ -67,6 +79,25 @@ function eliminarTd(params) {
 function irConsultarOrden(params) {
     var workArea=document.getElementById("wareaCitas")
     console.log(workArea)
+   
+    workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/consultarServicios.html")
+    console.log(workArea.getAttributeNode("src"))
+}
+function solicitarAcceso(user,pass) {
+    irMenu(user)
+    
+}
+
+function irGestionarCita(params) {
+    var workArea=document.getElementById("wareaServicios")
+    console.log(workArea)
+    workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/consultarCitas.html")
+    console.log(workArea.getAttributeNode("src"))
+}
+function irGestionarOrden(params) {
+    var workArea=document.getElementById("wareaServicios")
+    console.log(workArea)
+   
     workArea.setAttribute("src","http://127.0.0.1:5500/VIEWS/consultarServicios.html")
     console.log(workArea.getAttributeNode("src"))
 }
